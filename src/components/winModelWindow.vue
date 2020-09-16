@@ -8,7 +8,7 @@
       <button class="buttons__button"
               @click="restart"
       >
-        Сначало
+        Сначала
       </button>
     </div>
 
