@@ -3,7 +3,7 @@
 
       <div class="loseModelWindow__title">Игра Окончена!!!</div>
       <div class="loseModelWindow__subtitle">Мне жаль!!! <br>Вы потерпели поражение в "Simon game".</div>
-      <div class="loseModelWindow__result">Ваш итоговый счет: {{result}} <br><br>Хотите начать сначало?</div>
+      <div class="loseModelWindow__result">Ваш итоговый счет: {{result}} <br><br>Хотите начать сначала?</div>
 
       <div class="buttons">
         <button class="buttons__button"

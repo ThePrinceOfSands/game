@@ -2,7 +2,7 @@
   <div class="winModelWindow">
     <div class="winModelWindow__title">Игра Окончена!!!</div>
     <div class="winModelWindow__subtitle">Поздравляю!!! <br>Вы полностью прошли игру "Simon game".</div>
-    <div class="winModelWindow__result">Ваш итоговый счет: {{result}} <br><br>Хотите начать сначало?</div>
+    <div class="winModelWindow__result">Ваш итоговый счет: {{result}} <br><br>Хотите начать сначала?</div>
 
     <div class="buttons">
       <button class="buttons__button"
