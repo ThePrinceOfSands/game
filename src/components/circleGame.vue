@@ -86,6 +86,7 @@ export default {
       noise: true, //флаг на звук
       good: '', //Проверка выбора игрока
 
+
     }
   },
 
@@ -191,13 +192,13 @@ export default {
       document.querySelector('.switches__button').disable = false;
 
       //Регулировка игры (заполнение порядка)
-      for(let i = 0; i < 5; i++){
+      for(let i = 0; i < 7; i++){
         this.order.push(Math.floor(Math.random() * 4) + 1)
       }
 
       this.compTurn = true;
       //Запуск активации кнопок
-      this.interval = setInterval(this.gameTurn, this.time);
+      this.interval = setInterval(this.gameTurn, 800);
     },
     // Ход игры
     gameTurn() {
@@ -206,7 +207,6 @@ export default {
         this.compTurn = false;
         this.clearColor();
       }
-      console.log(this.turn);
       // Загорание кнопок
       if(this.compTurn) {
         this.clearColor();
@@ -282,15 +282,16 @@ export default {
       if(this.playerOrder[this.playerOrder.length - 1] !== this.order[this.playerOrder.length - 1])
         this.good = false;
       //Проверка условий для игры
-      if(this.playerOrder.length === 5 && this.good){
+      if(this.playerOrder.length === 7 && this.good){
         this.winGame();
       }
       //сброс игры
       if(this.good === false){
         this.flashColor();
-        this.addCounter('NO!');
+        this.addCounter('no');
 
         setTimeout(() => {
+          document.querySelector('.loseModelWindow').style.display = 'block';
           this.addCounter(this.turn);
           this.clearColor();
 
@@ -298,10 +299,6 @@ export default {
           this.flash = 0;
           this.playerOrder = [];
           this.good = true;
-          this.turn = 1;
-          this.addCounter(this.turn);
-          this.noise = false;  // Отключение флага звука
-          document.querySelector('.loseModelWindow').style.display = 'block';
         },800);
       }
       //след. ход
@@ -311,16 +308,17 @@ export default {
         this.compTurn = true;
         this.flash = 0;
         this.addCounter(this.turn);
-        this.interval = setInterval(this.gameTurn, 800);
+        this.interval = setInterval(this.gameTurn, this.time);
       }
     },
     //Победа
     winGame(){
       this.flashColor();
-      this.addCounter('YES!');
+      this.addCounter('yes');
       this.win = true;
       setTimeout(() =>{
         document.querySelector('.winModelWindow').style.display = 'block';
+        this.clearColor();
       }, 800)
 
     },
