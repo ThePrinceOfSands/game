@@ -183,6 +183,7 @@ export default {
       this.turn = 1;
       this.order = [];
       this.playerOrder = [];
+      clearInterval(this.interval);
       this.interval = 0;
       this.turnCounter = 1;
       this.flash = 0;
@@ -316,6 +317,7 @@ export default {
       this.flashColor();
       this.addCounter('yes');
       this.win = true;
+      clearInterval(this.interval);
       setTimeout(() =>{
         document.querySelector('.winModelWindow').style.display = 'block';
         this.clearColor();
